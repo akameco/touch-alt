@@ -28,8 +28,9 @@ $ touch-alt --help
 
 ## Example
 
+### Add new template file
+
 ```
-# Add new template file
 $ cat .editorconfig
 root = true
 
@@ -41,12 +42,17 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 $ touch-alt --add .editorconfig
-$ rm .editorconfig
+```
+
+### Usage
+
+```
 # Use touch
 $ touch .editorconfig
 $ cat .editorconfig
 
 $ rm .editorconfig
+
 # Use touch-alt
 $ touch-alt .editorconfig
 $ cat .editorconfig
