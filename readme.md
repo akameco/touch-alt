@@ -50,7 +50,7 @@ insert_final_newline = true
 
 
 ## Tip
-Add alias `touch`=`touch-alt` to your .zshrc/.bashrc to reduce typing & create file easily.
+Add `alias touch=touch-alt` to your .zshrc/.bashrc to reduce typing & create file easily.
 
 
 ## License
