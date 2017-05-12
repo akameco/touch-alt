@@ -30,6 +30,13 @@ test('run', t => {
   )
 })
 
+test('from not found', t => {
+  const { src } = t.context
+  fs.writeFileSync(src, '')
+  fn(src)
+  t.is(fs.readFileSync(src, 'utf8'), '')
+})
+
 test('--add', t => {
   const { src, dest } = t.context
   fs.writeFileSync(src, '')

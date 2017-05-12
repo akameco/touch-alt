@@ -1,5 +1,6 @@
 'use strict'
 const os = require('os')
+const fs = require('fs')
 const path = require('path')
 const cpFile = require('cp-file')
 const makeDir = require('make-dir')
@@ -25,5 +26,9 @@ module.exports = (input, opts) => {
     return
   }
 
-  cpFile.sync(target, input, opts.overwrite)
+  if (pathExists.sync(target)) {
+    cpFile.sync(target, input, opts.overwrite)
+  } else {
+    fs.writeFileSync(target, '')
+  }
 }
