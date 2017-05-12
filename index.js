@@ -11,7 +11,7 @@ module.exports = (input, opts) => {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }
 
-  opts = opts || { overwrite: false }
+  opts = opts || { add: false, overwrite: false }
 
   const configPath = opts.dirPath || path.join(os.homedir(), '.touch-alt')
 
@@ -29,6 +29,6 @@ module.exports = (input, opts) => {
   if (pathExists.sync(target)) {
     cpFile.sync(target, input, opts.overwrite)
   } else {
-    fs.writeFileSync(target, '')
+    fs.writeFileSync(input, '')
   }
 }
