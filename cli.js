@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const updateNotifier = require('update-notifier');
-const fn = require('./');
+'use strict'
+const meow = require('meow')
+const updateNotifier = require('update-notifier')
+const fn = require('./')
 
 const cli = meow(
   `
@@ -20,26 +20,26 @@ const cli = meow(
     boolean: ['add', 'overwrite'],
     default: {
       overwrite: false,
-      add: false,
-    },
+      add: false
+    }
   }
-);
+)
 
-updateNotifier({ pkg: cli.pkg }).notify();
+updateNotifier({ pkg: cli.pkg }).notify()
 
-const input = cli.input[0];
+const input = cli.input[0]
 
 if (!input) {
-  process.exit(0);
+  process.exit(0)
 }
 
 try {
-  fn(input, cli.flags);
+  fn(input, cli.flags)
 } catch (err) {
   if (err.name === 'CpyError') {
-    console.log(err.message);
-    process.exit(1);
+    console.log(err.message)
+    process.exit(1)
   } else {
-    throw err;
+    throw err
   }
 }
