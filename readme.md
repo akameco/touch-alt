@@ -26,6 +26,28 @@ $ touch-alt --help
   $ touch-alt .editorconfig
 ```
 
+## Example
+
+```
+$ touch .editorconfig
+$ cat .editorconfig
+
+$ rm .editorconfig
+$ ls -la ~/.touch-alt
+.             ..            .editorconfig
+$ touch-alt .editorconfig
+$ cat .editorconfig
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
+
 
 ## Tip
 Add alias `touch`=`touch-alt` to your .zshrc/.bashrc to reduce typing & create file easily.
