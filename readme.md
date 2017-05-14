@@ -1,4 +1,4 @@
-# touch-alt [![Build Status](https://travis-ci.org/akameco/touch-alt.svg?branch=master)](https://travis-ci.org/akameco/touch-alt)
+# [![touch-alt](media/logo.png)](https://github.com/akameco/touch-alt) [![Build Status](https://travis-ci.org/akameco/touch-alt.svg?branch=master)](https://travis-ci.org/akameco/touch-alt)
 
 > Create from a template instead of a new file
 
