@@ -11,12 +11,17 @@ const cli = meow(
   $ touch-alt --add <source>
 
   Options
-  --add   Create new template file
+  -a, --add         Create new template file
+  -o, --overwrite   Overwrite by template
 
   Example
   $ touch-alt .editorconfig
 `,
   {
+    alias: {
+      a: 'add',
+      o: 'overwrite'
+    },
     boolean: ['add', 'overwrite'],
     default: {
       overwrite: false,
