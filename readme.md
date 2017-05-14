@@ -15,12 +15,15 @@ $ npm install --global touch-alt
 ```
 $ touch-alt --help
 
+  Create from a template instead of a new file
+
   Usage
   $ touch-alt <source>
   $ touch-alt --add <source>
 
   Options
-  --add   Create new template file
+  -a, --add         Create new template file
+  -o, --overwrite   Overwrite by template
 
   Example
   $ touch-alt .editorconfig
