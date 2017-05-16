@@ -9,6 +9,10 @@
 $ npm install --global touch-alt
 ```
 
+## Demo
+
+![demo](./media/demo.gif)
+
 
 ## Usage
 
