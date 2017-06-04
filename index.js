@@ -27,7 +27,7 @@ module.exports = (input, opts) => {
   }
 
   if (pathExists.sync(target)) {
-    cpFile.sync(target, input, opts.overwrite)
+    cpFile.sync(target, input, { overwrite: opts.overwrite })
   } else {
     fs.writeFileSync(input, '')
   }
