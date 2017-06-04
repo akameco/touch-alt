@@ -11,7 +11,7 @@ module.exports = (input, opts) => {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }
 
-  opts = opts || { add: false, overwrite: false }
+  opts = Object.assign({ add: false, overwrite: false }, opts)
 
   const configPath = opts.dirPath || path.join(os.homedir(), '.touch-alt')
 
@@ -19,7 +19,7 @@ module.exports = (input, opts) => {
     makeDir.sync(configPath)
   }
 
-  const target = path.join(configPath, input)
+  const target = path.resolve(configPath, input)
 
   if (opts.add) {
     cpFile.sync(input, target)

@@ -6,28 +6,27 @@ import uuid from 'uuid'
 import fn from '.'
 
 test.before(() => {
-  process.chdir(path.dirname(__dirname))
+  process.chdir(__dirname)
 })
 
 test.beforeEach(t => {
+  t.context.targetPath = path.resolve(uuid.v4())
+  t.context.targetFilePath = path.resolve(t.context.targetPath, 'target')
+  t.context.output = 'target'
   t.context.src = uuid.v4()
   t.context.dest = uuid.v4()
-  t.context.creates = [t.context.src, t.context.dest]
 })
 
 test.afterEach.always(t => {
-  t.context.creates.forEach(path => del.sync(path))
+  Object.keys(t.context).forEach(p => del.sync(t.context[p]))
 })
 
 test('run', t => {
-  const { src, dest } = t.context
-  fs.mkdirSync(dest)
-  fs.writeFileSync(path.join(dest, src), '')
-  fn(src, { dirPath: dest })
-  t.is(
-    fs.readFileSync(src, 'utf8'),
-    fs.readFileSync(path.resolve(dest, path.basename(src)), 'utf8')
-  )
+  const { targetPath, targetFilePath, output } = t.context
+  fs.mkdirSync(targetPath)
+  fs.writeFileSync(targetFilePath, 'unicorn', 'utf8')
+  fn(output, { dirPath: targetPath })
+  t.is(fs.readFileSync(output, 'utf8'), 'unicorn')
 })
 
 test('from not found', t => {
@@ -45,6 +44,24 @@ test('--add', t => {
     fs.readFileSync(path.resolve(dest, path.basename(src)), 'utf8'),
     fs.readFileSync(src, 'utf8')
   )
+})
+
+test('--overwrite=true', t => {
+  const { targetPath, targetFilePath, output } = t.context
+  fs.mkdirSync(targetPath)
+  fs.writeFileSync(targetFilePath, 'overwrite', 'utf-8')
+  fs.writeFileSync(output, 'unicorn')
+  fn(output, { dirPath: targetPath, overwrite: true })
+  t.is(fs.readFileSync(output, 'utf-8'), 'overwrite')
+})
+
+test('--overwrite=false', t => {
+  const { targetPath, targetFilePath, output } = t.context
+  fs.mkdirSync(targetPath)
+  fs.writeFileSync(targetFilePath, 'overwrite', 'utf-8')
+  fs.writeFileSync(output, 'unicorn')
+  fn(output, { dirPath: targetPath, overwrite: false })
+  t.is(fs.readFileSync(output, 'utf-8'), 'unicorn')
 })
 
 test('throw err', t => {
