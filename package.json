@@ -32,9 +32,9 @@
     ]
   },
   "dependencies": {
-    "cp-file": "^4.2.0",
+    "cp-file": "^5.0.0",
     "make-dir": "^1.1.0",
-    "meow": "^3.7.0",
+    "meow": "^4.0.0",
     "path-exists": "^3.0.0",
     "update-notifier": "^2.3.0"
   },

@@ -18,14 +18,17 @@ const cli = meow(
   $ touch-alt .editorconfig
 `,
   {
-    alias: {
-      a: 'add',
-      o: 'overwrite'
-    },
-    boolean: ['add', 'overwrite'],
-    default: {
-      overwrite: false,
-      add: false
+    flags: {
+      add: {
+        alias: 'a',
+        type: 'boolean',
+        default: false
+      },
+      overwrite: {
+        alias: 'o',
+        type: 'boolean',
+        default: false
+      }
     }
   }
 )
