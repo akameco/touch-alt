@@ -18,6 +18,15 @@
         "test",
         "infra"
       ]
+    },
+    {
+      "login": "ryota-murakami",
+      "name": "ryota-murakami\u0010",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5501268?v=4",
+      "profile": "http://ryota-murakami.github.io/",
+      "contributions": [
+        "infra"
+      ]
     }
   ]
 }

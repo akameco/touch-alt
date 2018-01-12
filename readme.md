@@ -1,7 +1,7 @@
 # [![touch-alt](media/logo.png)](https://github.com/akameco/touch-alt)
 
 [![Build Status](https://travis-ci.org/akameco/touch-alt.svg?branch=master)](https://travis-ci.org/akameco/touch-alt)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 > Create from a template instead of a new file
 
@@ -86,8 +86,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub><b>akameco</b></sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/touch-alt/commits?author=akameco "Code") [📖](https://github.com/akameco/touch-alt/commits?author=akameco "Documentation") [⚠️](https://github.com/akameco/touch-alt/commits?author=akameco "Tests") [🚇](#infra-akameco "Infrastructure (Hosting, Build-Tools, etc)") |
-| :---: |
+| [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub><b>akameco</b></sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/touch-alt/commits?author=akameco "Code") [📖](https://github.com/akameco/touch-alt/commits?author=akameco "Documentation") [⚠️](https://github.com/akameco/touch-alt/commits?author=akameco "Tests") [🚇](#infra-akameco "Infrastructure (Hosting, Build-Tools, etc)") | [<img src="https://avatars2.githubusercontent.com/u/5501268?v=4" width="100px;"/><br /><sub><b>ryota-murakami</b></sub>](http://ryota-murakami.github.io/)<br />[🚇](#infra-ryota-murakami "Infrastructure (Hosting, Build-Tools, etc)") |
+| :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
