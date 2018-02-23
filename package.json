@@ -28,26 +28,26 @@
   ],
   "lint-staged": {
     "*.{js,md}": [
-      "fmt",
+      "prettier --write",
       "git add"
     ]
   },
   "dependencies": {
     "cp-file": "^5.0.0",
-    "make-dir": "^1.1.0",
+    "make-dir": "^1.2.0",
     "meow": "^4.0.0",
     "path-exists": "^3.0.0",
     "update-notifier": "^2.3.0"
   },
   "devDependencies": {
-    "all-contributors-cli": "^4.10.1",
-    "ava": "^0.24.0",
+    "all-contributors-cli": "^4.11.0",
+    "ava": "^0.25.0",
     "del": "^3.0.0",
     "husky": "^0.14.3",
-    "lint-staged": "^6.0.0",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
-    "uuid": "^3.1.0",
-    "xo": "^0.18.2"
+    "uuid": "^3.2.1",
+    "xo": "^0.20.3"
   },
   "xo": {
     "space": true,

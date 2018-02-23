@@ -2,7 +2,7 @@
 'use strict'
 const meow = require('meow')
 const updateNotifier = require('update-notifier')
-const fn = require('./')
+const fn = require('.')
 
 const cli = meow(
   `
@@ -35,7 +35,7 @@ const cli = meow(
 
 updateNotifier({ pkg: cli.pkg }).notify()
 
-const input = cli.input[0]
+const [input] = cli.input
 
 if (!input) {
   process.exit(0)
