@@ -1,5 +1,7 @@
 # [![touch-alt](media/logo.png)](https://github.com/akameco/touch-alt)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/akameco/touch-alt.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/akameco/touch-alt.svg?branch=master)](https://travis-ci.org/akameco/touch-alt)
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
