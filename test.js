@@ -21,6 +21,11 @@ test.afterEach.always(t => {
   Object.keys(t.context).forEach(p => del.sync(t.context[p]))
 })
 
+test('no input and no flags', t => {
+  const result = fn()
+  t.is(result, undefined)
+})
+
 test('run', t => {
   const { targetPath, targetFilePath, output } = t.context
   fs.mkdirSync(targetPath)
@@ -62,6 +67,29 @@ test('--overwrite=false', t => {
   fs.writeFileSync(output, 'unicorn')
   fn(output, { dirPath: targetPath, overwrite: false })
   t.is(fs.readFileSync(output, 'utf-8'), 'unicorn')
+})
+
+test('--list with no target directory', t => {
+  const { targetPath } = t.context
+  const result = fn(undefined, { dirPath: targetPath, list: true })
+  t.is(result, 'no template files')
+})
+
+test('--list with empty targets', t => {
+  const { targetPath } = t.context
+  fs.mkdirSync(targetPath)
+  const result = fn(undefined, { dirPath: targetPath, list: true })
+  t.is(result, 'no template files')
+})
+
+test('--list with targets', t => {
+  const { targetPath, targetFilePath } = t.context
+  fs.mkdirSync(targetPath)
+  fs.writeFileSync(targetFilePath, 'foo', 'utf-8')
+  fs.writeFileSync(`${targetFilePath}2`, 'bar', 'utf-8')
+  const files = fs.readdirSync(targetPath)
+  const result = fn(undefined, { dirPath: targetPath, list: true })
+  t.is(result, `${files[0]}\n${files[1]}`)
 })
 
 test('throw err', t => {
