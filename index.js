@@ -7,13 +7,26 @@ const makeDir = require('make-dir')
 const pathExists = require('path-exists')
 
 module.exports = (input, opts) => {
+  opts = Object.assign({ add: false, overwrite: false, list: false }, opts)
+
+  const configPath = opts.dirPath || path.join(os.homedir(), '.touch-alt')
+
+  if (input === undefined) {
+    if (opts.list) {
+      if (!pathExists.sync(configPath)) {
+        return 'no template files'
+      }
+      const files = fs.readdirSync(configPath)
+      if (files.length === 0) {
+        return 'no template files'
+      }
+      return files.join('\n')
+    }
+    return
+  }
   if (typeof input !== 'string') {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }
-
-  opts = Object.assign({ add: false, overwrite: false }, opts)
-
-  const configPath = opts.dirPath || path.join(os.homedir(), '.touch-alt')
 
   if (!pathExists.sync(configPath)) {
     makeDir.sync(configPath)

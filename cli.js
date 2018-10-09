@@ -13,6 +13,7 @@ const cli = meow(
   Options
   -a, --add         Create new template file
   -o, --overwrite   Overwrite by template
+  -l, --list        show template file list
 
   Example
   $ touch-alt .editorconfig
@@ -28,6 +29,11 @@ const cli = meow(
         alias: 'o',
         type: 'boolean',
         default: false
+      },
+      list: {
+        alias: 'l',
+        type: 'boolean',
+        default: false
       }
     }
   }
@@ -35,14 +41,11 @@ const cli = meow(
 
 updateNotifier({ pkg: cli.pkg }).notify()
 
-const [input] = cli.input
-
-if (!input) {
-  process.exit(0)
-}
-
 try {
-  fn(input, cli.flags)
+  const output = fn(cli.input[0], cli.flags)
+  if (output) {
+    console.log(output)
+  }
 } catch (err) {
   if (err.name === 'CpyError') {
     console.log(err.message)
