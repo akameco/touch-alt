@@ -1,3 +1,4 @@
+// @flow
 'use strict'
 const os = require('os')
 const fs = require('fs')
@@ -6,7 +7,7 @@ const cpFile = require('cp-file')
 const makeDir = require('make-dir')
 const pathExists = require('path-exists')
 
-module.exports = (input, opts) => {
+module.exports = (input /* : string */, opts /* : Object */) => {
   if (typeof input !== 'string') {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }

@@ -17,7 +17,7 @@
     "add-contributors": "all-contributors add",
     "precommit": "lint-staged",
     "fmt": "prettier --write '*.{js,md}'",
-    "test": "xo && ava"
+    "test": "flow && xo && ava"
   },
   "files": [
     "cli.js",
@@ -43,6 +43,7 @@
     "all-contributors-cli": "^4.11.1",
     "ava": "^0.25.0",
     "del": "^3.0.0",
+    "flow-bin": "^0.82.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
     "prettier": "^1.12.1",
