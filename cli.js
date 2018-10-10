@@ -43,11 +43,11 @@ if (!input) {
 
 try {
   fn(input, cli.flags)
-} catch (err) {
-  if (err.name === 'CpyError') {
-    console.log(err.message)
+} catch (error) {
+  if (error.name === 'CpyError') {
+    console.log(error.message)
     process.exit(1)
   } else {
-    throw err
+    throw error
   }
 }
