@@ -29,6 +29,8 @@ module.exports = (input /* : string */, opts /* : Object */) => {
 
   if (pathExists.sync(target)) {
     cpFile.sync(target, input, { overwrite: opts.overwrite })
+  } else if (pathExists.sync(input)) {
+    throw new Error(`already exist: ${input}`)
   } else {
     fs.writeFileSync(input, '')
   }

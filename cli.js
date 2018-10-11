@@ -44,10 +44,6 @@ if (!input) {
 try {
   fn(input, cli.flags)
 } catch (error) {
-  if (error.name === 'CpyError') {
-    console.log(error.message)
-    process.exit(1)
-  } else {
-    throw error
-  }
+  console.log(error.message)
+  process.exit(1)
 }
