@@ -79,6 +79,15 @@ insert_final_newline = true
 
 Add `alias touch=touch-alt` to your .zshrc/.bashrc to reduce typing & create file easily.
 
+## Config
+
+Default: `~/.touch-alt`
+
+```sh
+$ ls ~/.touch-alt
+ISSUE_TEMPLATE.md        index.js                 readme.md
+```
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
