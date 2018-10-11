@@ -12,10 +12,6 @@ module.exports = (input /* : string */, opts /* : Object */) => {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }
 
-  if (pathExists.sync(input)) {
-    throw new Error(`already exists: ${input}`)
-  }
-
   opts = Object.assign({ add: false, overwrite: false }, opts)
 
   const configPath = opts.dirPath || path.join(os.homedir(), '.touch-alt')
