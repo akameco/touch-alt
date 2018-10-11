@@ -1,6 +1,6 @@
 {
   "name": "touch-alt",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Create from a template instead of a new file",
   "license": "MIT",
   "repository": "akameco/touch-alt",
